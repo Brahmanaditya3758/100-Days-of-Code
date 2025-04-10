@@ -7,4 +7,9 @@ You are looking to print a sentence like this:
 
 Hello Name!
 
-e.g. Hello Angela!
+#code : 
+
+print("My name is" + " " + "Aditya")
+
+name = input("What is your name")
+print ("hello" + name +"!")
