@@ -1,0 +1,46 @@
+import art
+
+
+
+def add(n1, n2):
+    return n1 + n2
+#TODO: Write out the other 3 functions - subtract, multiply and divide.
+def multiply(n1 , n2):
+    return n1 * n2
+
+def divide(n1 , n2):
+    return n1/n2
+
+def subtract(n1 , n2):
+    return n1 - n2
+
+#TODO: Add these 4 functions into a dictionary as the values. Keys = "+", "-", "*", "/"
+
+operations = {"+": add , "*" : multiply , "/" : divide , "-" : subtract}
+#TODO: Use the dictionary operations to perform the calculations. Multiply 4 * 8 using the dictionary.
+# print(operations["*"](2 , 4))
+def calculator():
+    print(art.logo)
+    should_accumulate = True
+    num1 = float(input("what is the first number:"))
+    while should_accumulate:
+        for symbol in operations:
+            print(symbol)
+
+        operational_symbol = input("pick a operator")
+
+        num2 = float(input("what is your next number"))
+        answer= operations[operational_symbol](num1 , num2)
+
+        print(f"{num1} {operational_symbol} {num2}")
+
+        choice=input(f"Type 'y' to calculating with {answer}, or type n to start a new calculation. ")
+
+        if choice =="y":
+            num1 = answer
+        else:
+            should_accumulate = False
+            print("\n" *20)
+            calculator()
+calculator()
+
